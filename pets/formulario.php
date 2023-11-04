@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,8 +30,8 @@
                 <div class="col-8">
                     <nav class="d-flex gap-4 align-items-center justify-content-end">
                         <a href="index.html">Home</a>
-                        <a href="quero-adotar.html">Quero Adotar</a>
-                        <a href="../painel/login.html" class="btn btn-custom">Admin</a>
+                        <a href="quero-adotar.php">Quero Adotar</a>
+                        <a href="../painel/login.php" class="btn btn-custom">Admin</a>
                     </nav>
                 </div>
             </div>
@@ -41,7 +42,7 @@
         <div class="container">
             <ol class="breadcrumb m-0">
                 <li class="breadcrumb-item fs-sm"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item fs-sm"><a href="quero-adotar.html">Quero Adotar</a></li>
+                <li class="breadcrumb-item fs-sm"><a href="quero-adotar.php">Quero Adotar</a></li>
                 <li class="breadcrumb-item fs-sm"><a href="integra.html">Tini</a></li>
                 <li class="breadcrumb-item active fs-sm" aria-current="page">Formulário de Solicitação</li>
             </ol>
@@ -54,20 +55,20 @@
 
             <p class="text-center">Preencha aqui os dados da pessoa interessada em adotar o animal selecionado:</p>
 
-            <form action="" class="bg-custom rounded p-4 mt-4 col-6 mx-auto row">
+            <form action="" method="POST" class="bg-custom rounded p-4 mt-4 col-6 mx-auto row">
                 <div class="form-group py-2 col-12">
                     <label for="solicitante" class="text-capitalize text-light">Seu nome:</label>
-                    <input type="text" class="form-control" name="solicitante" id="solicitante">
+                    <input type="text" class="form-control" name="solicitante" id="solicitante" bloqued=>
                 </div>
 
                 <div class="form-group py-2 col-12">
-                    <label for="animal" class="text-capitalize text-light">Nome <span class="text-lowercase">do</span> animal:</label>
-                    <input type="text" class="form-control" name="animal" id="animal" value="Tini" disabled>
+                    <label for="animal" class="text-capitalize text-light"> <span class="text-lowercase"></span>Nome do animal:</label>
+                    <input type="text" class="form-control" name="animal" id="animal" value="Tini">
                 </div>
 
                 <div class="form-group py-2 col-6">
                     <label for="cpf" class="text-capitalize text-light">CPF:</label>
-                    <input type="text" class="form-control" name="cpf" id="cpf">
+                    <input type="text" class="form-control" name="cpf" id="cpf" placeholder="01234567891">
                 </div>
 
                 <div class="form-group py-2 col-6">
@@ -77,12 +78,12 @@
 
                 <div class="form-group py-2 col-6">
                     <label for="cel" class="text-capitalize text-light">Celular:</label>
-                    <input type="text" class="form-control" name="cel" id="cel">
+                    <input type="tel" class="form-control" name="cel" id="cel" placeholder="(11)11111-1111">
                 </div>
 
                 <div class="form-group py-2 col-6">
                     <label for="nascimento" class="text-capitalize text-light">Data <span class="text-lowercase">de</span> Nascimento:</label>
-                    <input type="text" class="form-control" name="nascimento" id="nascimento">
+                    <input type="text" class="form-control" name="nascimento" id="nascimento" placeholder="aaaa/mm/dd">
                 </div>
 
                 <div class="col-12 d-flex justify-content-center mt-4">
@@ -90,6 +91,7 @@
                 </div>
             </form>
         </div>
+        <?php include("solicitacao_adocao.php");?>
     </section>
 
     <section class="bg-custom py-3" style="background-color: #FFECCE;">

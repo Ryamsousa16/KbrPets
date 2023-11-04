@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -29,7 +30,7 @@
                 <div class="col-8">
                     <nav class="d-flex gap-4 align-items-center justify-content-end">
                         <a href="index.html">Home</a>
-                        <a href="quero-adotar.html">Quero Adotar</a>
+                        <a href="quero-adotar.php">Quero Adotar</a>
                         <a href="../painel/login.php" class="btn btn-custom">Admin</a>
                     </nav>
                 </div>
@@ -50,7 +51,7 @@
         <div class="container-fluid">
             <div class="row">
                 <aside style="width: 320px;">
-                    <form method="" class="bg-custom rounded p-3 text-uppercase pt-4 mt-2 position-sticky" style="top: 1rem;">
+                    <form method="GET" class="bg-custom rounded p-3 text-uppercase pt-4 mt-2 position-sticky" style="top: 1rem;">
                         <div class="mb-3 text-light bowlby-one">
                             Filtros
                         </div>
