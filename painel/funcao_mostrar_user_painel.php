@@ -1,22 +1,5 @@
 <?php
     include("conn.php");
-    /*function deletar($email_deletar){
-        include("conn.php");
-            
-        // Execute a consulta SQL para excluir o usuário com o email especificado
-        $sql_code = "SELECT FROM usuarios WHERE email = '$email_deletar'";
-        $sql_query = $mysqli->query($sql_code);
-
-        if ($sql_query) {
-            // Exclusão bem-sucedida
-
-            header("cadastrar.php");
-        } else {
-            // Erro na exclusão
-            echo "erro"
-            ;
-        }
-    }*/
     
     // Armazenando quantos usuários tem
     $sql_code1 = "SELECT * FROM usuarios WHERE id >= 0 ";
