@@ -59,44 +59,9 @@
                     $sql_code = "INSERT INTO solicitacao_adocao (nome_dono, nome_animal, cpf, email_dono, telefone, data_nascimento)
                                  VALUES ('$nome_dono', '$animal', '$cpf_dono', '$email_dono','$cel_dono','$nascimento_dono');";
                     $sql_query = $mysqli->query($sql_code) or die("Erro ao logar!");
-                    echo $nascimento_dono;
+
                 }
-                    
             }
-            /*// Armazenando nome, email, senha e confsenha preenchidos no formulário
-            $nome = $mysqli->real_escape_string($_POST["nome"]);
-            $email = $mysqli->real_escape_string($_POST["email"]);
-            $senha = $mysqli->real_escape_string($_POST["senha"]);
-            $confsenha = $mysqli->real_escape_string($_POST["confSenha"]); 
-            
-            // Código sql pra verificar o email e a senha
-            $sql_code = "SELECT * FROM usuarios WHERE email = '$email'";
-            $sql_query = $mysqli->query($sql_code) or die("Erro ao logar!");
-    
-            // Armazenando o número de resultados do select
-            $quantidade = $sql_query->num_rows;
-    
-            // Verificando se o email não existe na base de dados
-            if($quantidade == 0){
-    
-                // Verificando se as senhas são idênticas
-                if ($senha === $confsenha) {
-    
-                    // Comando de insert na base de dados
-                    $sql_code = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha');";
-                    $sql_query = $mysqli->query($sql_code) or die("Erro ao logar!");
-                    
-                    header("Location: painel.php");
-                }
-                else{
-                    echo "<code><center>As senhas são incompatíveis!</center></code>";
-                } 
-    
-            }
-            // Caso tenha mais de 1 resultado no select
-            else{
-                echo "<code><center>Esse email já está cadastrado!</center></code>";
-            }*/
         }
     }
 ?>

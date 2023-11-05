@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -43,7 +42,7 @@
             <ol class="breadcrumb m-0">
                 <li class="breadcrumb-item fs-sm"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item fs-sm"><a href="quero-adotar.php">Quero Adotar</a></li>
-                <li class="breadcrumb-item fs-sm"><a href="integra.html">Tini</a></li>
+                <li class="breadcrumb-item fs-sm"><a href="integra.php">Tini</a></li>
                 <li class="breadcrumb-item active fs-sm" aria-current="page">Formulário de Solicitação</li>
             </ol>
         </div>
@@ -91,7 +90,9 @@
                 </div>
             </form>
         </div>
+
         <?php include("solicitacao_adocao.php");?>
+        
     </section>
 
     <section class="bg-custom py-3" style="background-color: #FFECCE;">
