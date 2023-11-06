@@ -1,5 +1,5 @@
 <?php
-include("protect.php");
+include("funcoes/funcao_protect.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
@@ -34,7 +34,7 @@ include("protect.php");
                             <a class="dropdown-item text-end" href="#">
                                 <small>Alterar Senha</small>
                             </a>
-                            <a class="dropdown-item text-end" href="sair.php">
+                            <a class="dropdown-item text-end" href="funcoes/funcao_sair.php">
                                 <small>Sair</small>
                             </a>
                         </li>
@@ -76,7 +76,7 @@ include("protect.php");
                     </div>
                 </div>
 
-                <a href="sair.php" class="w-100 d-flex align-items-center gap-2 link-light text-decoration-none mt-2 py-3 px-3 ms-1 icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);">
+                <a href="funcoes/funcao_sair.php" class="w-100 d-flex align-items-center gap-2 link-light text-decoration-none mt-2 py-3 px-3 ms-1 icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(-.125rem, 0, 0);">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
                         <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
@@ -116,17 +116,17 @@ include("protect.php");
                         <div class="col-3 d-flex flex-wrap">
                             <label for="search" class="col-form-label">Buscar:</label>
                             <div class="col-12">
-                                <input type="text" class="form-control bg-dark text-light border-dark" id="search" placeholder="Ex: Admin">
+                                <input type="text" name="Nome" class="form-control bg-dark text-light border-dark" id="search" placeholder="Ex: Admin">
                             </div>
                         </div>
     
                         <div class="col-3 d-flex flex-wrap">
                             <label for="status" class="col-form-label">Status:</label>
                             <div class="col-12">
-                                <select name="status" class="form-control bg-dark text-light border-dark form-select" id="status">
+                                <select name="Status" class="form-control bg-dark text-light border-dark form-select" id="status">
                                     <option value="" disabled selected>Selecione</option>
-                                    <option value="ativado">Ativado</option>
-                                    <option value="desativado">Desativado</option>
+                                    <option value="Ativado">Ativado</option>
+                                    <option value="Desativado">Desativado</option>
                                 </select>
                             </div>
                         </div>
@@ -136,12 +136,12 @@ include("protect.php");
     
                             <div class="col-6 d-flex gap-2">
                                 <label for="de" class="col-form-label">De:</label>
-                                <input type="text" class="form-control bg-dark text-light border-dark" id="de" placeholder="27/10/2023">
+                                <input type="text" name="DataInit" class="form-control bg-dark text-light border-dark" id="de" placeholder="27/10/2023">
                             </div>
     
                             <div class="col-6 d-flex gap-2">
                                 <label for="ate" class="col-form-label">Até:</label>
-                                <input type="text" class="form-control bg-dark text-light border-dark" id="ate" placeholder="27/10/2023">
+                                <input type="text" name="DataEnd" class="form-control bg-dark text-light border-dark" id="ate" placeholder="27/10/2023">
                             </div>
                         </div>
                         
@@ -167,7 +167,7 @@ include("protect.php");
                         
                         <?php
                             // mostrar todos os usuários cadastrados de forma otimizada
-                            include("funcao_mostrar_user_painel.php");        
+                            include("funcoes/funcao_mostrar_user_painel.php");        
                         ?>                                                                 
             </tbody>
                 </table>

@@ -1,6 +1,5 @@
 <?php
-include("protect.php");
-include("funcao_cadastro.php");
+    include("funcoes/funcao_protect.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" class="h-100">
@@ -35,7 +34,7 @@ include("funcao_cadastro.php");
                             <a class="dropdown-item text-end" href="#">
                                 <small>Alterar Senha</small>
                             </a>
-                            <a class="dropdown-item text-end" href="sair.php">
+                            <a class="dropdown-item text-end" href="funcoes/funcao_sair.php">
                                 <small>Sair</small>
                             </a>
                         </li>
@@ -124,7 +123,10 @@ include("funcao_cadastro.php");
                         <input type="password" name="confSenha" class="form-control bg-dark text-light border-dark" id="confSenha">
                     </div>
                 </div>
-
+                <?php
+                    
+                    include("funcoes/funcao_cadastro.php");
+                ?>
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-light">Cadastrar</button>
                 </div>

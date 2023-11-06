@@ -30,9 +30,9 @@
                                                            
                                 <?php
                                     // Mostrando os usuários de forma otimizada
-                                    include("funcao_recuperar.php");
+                                    include("funcoes/funcao_recuperar.php");
                                 ?>
-                                <!-- <small class="bg-danger rounded py-1 px-2 mt-1 d-block text-light">Erro</small> -->
+                                
                             </div>
 
                             <div class="col-12 mt-3 d-flex gap-2 align-items-center justify-content-between">
