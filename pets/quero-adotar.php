@@ -56,46 +56,14 @@
                             Filtros
                         </div>
 
-                        <div class="form-group py-2">
-                            <label for="especie" class="text-capitalize text-light">Espécie</label>
-                            <select name="especie" id="especie" class="form-control form-select">
-                                <option value="" selected disabled>Selecione</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group py-2">
-                            <label for="raca" class="text-capitalize text-light">Raça</label>
-                            <select name="raca" id="raca" class="form-control form-select">
-                                <option value="" selected disabled>Selecione</option>
-                            </select>
-                        </div>
+                        <?php
+                            // Otimizando a exibição das opções de filtro
+                            include("funcoes/Funcao_Opcao_Filtro.php");
+                        ?>
 
                         <div class="form-group py-2">
                             <label for="local" class="text-capitalize text-light">Local</label>
-                            <input type="text" class="form-control" name="local" id="local" placeholder="Ex: São Paulo">
-                        </div>
-
-                        <div class="form-group py-2">
-                            <label for="porte" class="text-capitalize text-light">Porte</label>
-                            <select name="porte" id="porte" class="form-control form-select">
-                                <option value="" selected disabled>Selecione</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group py-2">
-                            <div class="w-100 text-capitalize text-light">Sexo</div>
-                            
-                            <div class="bg-light p-2 rounded d-flex flex-wrap row-gap-2">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sexo" id="femea" value="">
-                                    <label class="form-check-label text-capitalize" for="femea">Fêmea</label>
-                                </div>
-        
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="sexo" id="macho" value="">
-                                    <label class="form-check-label text-capitalize" for="macho">Macho</label>
-                                </div>
-                            </div>
+                            <input type="text" class="form-control" name="local" id="local" placeholder="Ex: SP">
                         </div>
 
                         <div class="form-group d-flex justify-content-end">
@@ -106,12 +74,11 @@
     
                 <main class="bg-light p-4 pb-5 col">
                     <h2 class="h4 py-2 pb-0 text-uppercase m-0 bowlby-one">Quero Adotar</h2>
-                    <p class="m-0 pb-2">Conheça os pets disponíveis para adoção</p>
-
+                    
                     <div class="row row-gap-4 mt-4">
 
                         <?php
-                            include("Exibir_animais.php");
+                            include("funcoes/Funcao_Exibir_animais.php");
                         ?>
 
                     </div>

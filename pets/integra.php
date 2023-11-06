@@ -38,7 +38,8 @@
     </header>
     
     <?php
-       include("integra_exibicao.php"); 
+        // Exibindo os animais de forma otimizada
+       include("funcoes/Funcao_Integra_Exibicao.php"); 
     ?>
 
     <section class="bg-custom py-3" style="background-color: #FFECCE;">
@@ -46,7 +47,6 @@
             <div class="d-flex align-items-center justify-content-center gap-3">
                 <div class="d-flex flex-column align-items-end">
                     <h2 class="bowlby-one text-uppercase h4 m-0">Alguma dúvida?</h2>
-
                     <a href="#" class="btn btn-custom">Entre em contato</a>
                 </div>
                 <img src="img/cartoon-cat-3.webp" alt="Gato" width="150">
@@ -60,7 +60,6 @@
                 <p class="m-0">
                     Copyright © 2023. Todos os direitos reservados
                 </p>
-
                 <a href="https://www.kbrtec.com.br/" target="_blank" title="Acesse o site da KBR TEC">
                     <img src="img/kbrtec.webp" alt="KBRTEC" width="100">
                 </a>

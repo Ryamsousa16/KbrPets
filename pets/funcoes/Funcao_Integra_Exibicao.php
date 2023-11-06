@@ -167,7 +167,7 @@ if (isset($_GET['cod'])){
                 <!-- Botão para redirecionar para a doação -->
                 
                 <div class="col-12">
-                    <a href="formulario.php" class="btn btn-custom mt-5 w-100 d-flex align-items-center justify-content-center gap-2">
+                    <a href="formulario.php?cod='.$cod_animal.'&nome_animal='.$nome_animal.'" class="btn btn-custom mt-5 w-100 d-flex align-items-center justify-content-center gap-2">
                         Solicitar adoção
 
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">

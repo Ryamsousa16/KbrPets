@@ -42,7 +42,15 @@
             <ol class="breadcrumb m-0">
                 <li class="breadcrumb-item fs-sm"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item fs-sm"><a href="quero-adotar.php">Quero Adotar</a></li>
-                <li class="breadcrumb-item fs-sm"><a href="integra.php">Tini</a></li>
+                
+                <?php
+                    $nome_animal = $_GET["nome_animal"];
+                    $codigo_animal = $_GET["cod"];
+                    echo'
+                    <li class="breadcrumb-item fs-sm"><a href="integra.php?cod='.$codigo_animal.'">'.$nome_animal.'</a></li>
+                    ';
+                ?>
+                
                 <li class="breadcrumb-item active fs-sm" aria-current="page">Formulário de Solicitação</li>
             </ol>
         </div>
@@ -62,7 +70,13 @@
 
                 <div class="form-group py-2 col-12">
                     <label for="animal" class="text-capitalize text-light"> <span class="text-lowercase"></span>Nome do animal:</label>
-                    <input type="text" class="form-control" name="animal" id="animal" value="Tini">
+
+                    <?php
+                        echo'
+                            <input type="text" class="form-control" name="animal" id="animal" value="'.$nome_animal.'" disabled>
+                        ';
+                    ?>
+                    
                 </div>
 
                 <div class="form-group py-2 col-6">
@@ -91,7 +105,8 @@
             </form>
         </div>
 
-        <?php include("solicitacao_adocao.php");?>
+        <!-- Chamando a função do formulário de adoção -->
+        <?php include("funcoes/Funcao_Solicitacao_Adocao.php"); ?>
         
     </section>
 

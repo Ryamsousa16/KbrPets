@@ -3,16 +3,11 @@
     
     // Verificação do form de solicitação do animal
     if(isset($_POST["solicitante"]) || isset($_POST["cpf"]) || isset($_POST["email"]) 
-    || isset($_POST["cel"]) || isset($_POST["nascimento"]) || isset($_POST["animal"])){
+    || isset($_POST["cel"]) || isset($_POST["nascimento"])){
         
         // Verificação do campo do solicitante
         if(strlen($_POST["solicitante"]) == 0){
             echo "<code><center>Preencha o campo do nome!</center></code>";
-        }
-
-        // Verificação do campo do nome do animal
-        else if(strlen($_POST["animal"]) == 0){
-            echo "<code><center>Preencha o campo do nome do animal  </center></code>";
         }
     
         // Verificação do campo do email
@@ -32,7 +27,7 @@
 
         // Verificação do campo da data de nascimento
         else if(strlen($_POST["nascimento"]) == 0){
-            echo "<code><center>Preencha o campo da sua data de nascimento: dd/mm/aaaa</center></code>";
+            echo "<code><center>Preencha o campo da sua data de nascimento: aaaa/mm/dd</center></code>";
         }
     
         // Caso os campos estiverem preenchidos
@@ -48,18 +43,36 @@
             }
             else{
                 $nome_resultado= $sql_query->fetch_assoc();
-                if ($nome_resultado["nome"] == $nome_preenchido){   
+
+                // Se o nome inserido for o mesmo do cadastro
+                if ($nome_resultado["nome"] === $nome_preenchido){   
+
                     $nome_dono = $_POST["solicitante"];
-                    $animal = $_POST["animal"];
+                    $animal = $_GET["nome_animal"];
                     $email_dono = $_POST["email"];
                     $cpf_dono = $_POST["cpf"];
                     $cel_dono = $_POST["cel"];
                     $nascimento_dono = $_POST["nascimento"];
                     
+                    // Inserindo o animal na lista de animais em processo de adoção
                     $sql_code = "INSERT INTO solicitacao_adocao (nome_dono, nome_animal, cpf, email_dono, telefone, data_nascimento)
                                  VALUES ('$nome_dono', '$animal', '$cpf_dono', '$email_dono','$cel_dono','$nascimento_dono');";
-                    $sql_query = $mysqli->query($sql_code) or die("Erro ao logar!");
+                    $sql_query = $mysqli->query($sql_code) or die("Erro!");
 
+                    // Atualizando o status do animal para Desativado
+                    $cod_animal = $_GET["cod"];
+                    $sql_code = "UPDATE animais_adocao SET ativo = 'Desativado' WHERE codigo_animal = '$cod_animal'";
+                    $sql_query = $mysqli->query($sql_code) or die("Erro!");
+
+                    // Mostrando a mensagem de aprovação da adoção e redirecionando para a página index.html
+                    echo "<center>Animal aprovado para adoção!</center>
+
+                    <script>
+                        setTimeout(function() {
+                            window.location.href = 'index.html';
+                        }, 5000); 
+                    </script>
+                    ";
                 }
             }
         }
