@@ -6,10 +6,11 @@ USE KbrTec;
 -- Criação da tabela usuarios
 CREATE TABLE usuarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
+    data_criacao TIMESTAMP,
     nome VARCHAR(160),
     email VARCHAR(160),
     senha VARCHAR(160),
-    ativo VARCHAR(160) default 'Inativo'
+    ativo VARCHAR(160) default 'Desativado'
 );
 
 -- Inserindo dados na tabela usuarios
@@ -18,21 +19,10 @@ INSERT INTO usuarios (nome, email, senha) VALUES ('Usuário', 'usuario@kbrtec.co
 INSERT INTO usuarios (nome, email, senha) VALUES ('Teste', 'teste@kbrtec.com.br', '0800');
 INSERT INTO usuarios (nome, email, senha) VALUES ('Ryam', 'ryam@email.com.br', '1234');
 
--- Criando a tabela solicitacao_adocao
-CREATE TABLE solicitacao_adocao(
-    nome_dono VARCHAR(160),
-    nome_animal VARCHAR(160),
-    cpf CHAR(11),
-    email_dono VARCHAR(160),
-    telefone VARCHAR(20),
-    data_nascimento DATE);
--- Mostrando informações da tabela solicitacao_adocao
-
-SELECT * FROM solicitacao_adocao;
-
 -- Criando a tabela dos animais
 CREATE TABLE animais_adocao(
 	codigo_animal INT, 
+    data_criacao_animal TIMESTAMP,
     nome_animal VARCHAR(255),
     especie VARCHAR(100),
     raca VARCHAR(100),
@@ -106,6 +96,19 @@ INSERT INTO animais_adocao(codigo_animal, nome_animal, especie, raca, descricao,
                            'Golden retriever', 'Um verdadeiro aventureiro, ele adora explorar e está sempre pronto para uma nova jornada.', 
                            'M', '1 Ano e 1 Mês', '6.2kg', 'Grande', 'Petz Warta, Londrina - PR');
 
+-- Criando a tabela solicitacao_adocao
+CREATE TABLE solicitacao_adocao(
+    nome_dono VARCHAR(160) NOT NULL,
+    nome_animal VARCHAR(160) NOT NULL,
+    cpf CHAR(11) NOT NULL,
+    email_dono VARCHAR(160) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    data_solicitacao TIMESTAMP,
+    data_nascimento DATE NOT NULL);
+-- Mostrando informações da tabela solicitacao_adocao
+
+SELECT * FROM solicitacao_adocao;
+
 -- Criando a tabela das imagens para os animais
 CREATE TABLE imagens(
     nome_arquivo VARCHAR(255) NOT NULL,
@@ -128,5 +131,6 @@ INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Luke.webp', 93132);
 INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Tini.webp', 873012);
 INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Tini-2.webp', 873012);
 INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Tini-3.webp', 873012);
-INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Tini-	4.webp', 873012);
+INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Tini-4.webp', 873012);
 INSERT INTO imagens(nome_arquivo, animal_id) VALUES('Tini-5.webp', 873012);
+
